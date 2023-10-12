@@ -1,5 +1,12 @@
 //Create a component, and name it ContactList
 
+
+//Create a state variable to store the ID of a selected contact.
+//create a componet that selects a specific contact 
+//make a state that stores, the contact data 
+//use effect to fetch contact data
+//using use effect will fetch the slected contact using the contact id 
+//
 import React, {useState} from "react"; 
 import ContactRow from "./ContactRow";
 import {useEffect} from 'react';
@@ -12,6 +19,8 @@ export default function ContactList() {
        ];
        const [contacts, setContacts] = useState(dummyContacts)
     console.log("Contacts",contacts)
+
+    
     useEffect(()=>{
         async function fetchContacts() {
             try {
@@ -27,6 +36,8 @@ export default function ContactList() {
         }, []);
        
   return ( 
+    <> 
+    
         <table>
           <thead>
             <tr>
@@ -46,5 +57,6 @@ export default function ContactList() {
 
           </tbody>
         </table>
-    ); 
+   </>
+   ); 
 }
